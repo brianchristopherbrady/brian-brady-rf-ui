@@ -17,15 +17,15 @@
   min-width: 0;
   flex: 0 1 14rem;
   max-width: 14rem;
-}
 
-.task-chip__title {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-}
+  &__title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
 
-.task-chip__description {
-  font-size: $font-size-xs;
-  color: $color-text-secondary;
+  &__description {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
 }

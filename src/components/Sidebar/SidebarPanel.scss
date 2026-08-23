@@ -12,54 +12,54 @@
     padding: $space-s $space-xs;
     overflow-y: auto;
   }
-}
 
-.sidebar-panel__event-name {
-  font-size: $font-size-md;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-}
-
-.sidebar-panel__meta {
-  font-size: $font-size-2xs;
-  font-weight: $font-weight-medium;
-  color: $color-text-primary;
-}
-
-.sidebar-panel__search {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.sidebar-panel__search-label {
-  @include visually-hidden;
-}
-
-.sidebar-panel__search-icon {
-  position: absolute;
-  left: $space-xxs;
-  width: 16px;
-  height: 16px;
-  pointer-events: none;
-}
-
-.sidebar-panel__search input {
-  width: 100%;
-  padding: $space-xxs;
-  padding-left: calc(16px + #{$space-xs});
-  background: $color-surface-muted;
-  border: 1px solid transparent;
-  border-radius: $radius-sm;
-  font-size: $font-size-2xs;
-  font-weight: $font-weight-semibold;
-  transition: border-color $motion-fast $motion-easing;
-
-  &::placeholder {
-    color: $color-text-muted;
+  &__event-name {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
   }
 
-  &:focus-visible {
-    border-color: $color-accent;
+  &__meta {
+    font-size: $font-size-2xs;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      padding: $space-xxs;
+      padding-left: calc(16px + #{$space-xs});
+      background: $color-surface-muted;
+      border: 1px solid transparent;
+      border-radius: $radius-sm;
+      font-size: $font-size-2xs;
+      font-weight: $font-weight-semibold;
+      transition: border-color $motion-fast $motion-easing;
+
+      &::placeholder {
+        color: $color-text-muted;
+      }
+
+      &:focus-visible {
+        border-color: $color-accent;
+      }
+    }
+  }
+
+  &__search-label {
+    @include visually-hidden;
+  }
+
+  &__search-icon {
+    position: absolute;
+    left: $space-xxs;
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
   }
 }

@@ -14,48 +14,48 @@
     padding: $space-s $space-xs;
     gap: $space-xs;
   }
-}
 
-.icon-rail__group {
-  display: flex;
-  align-items: center;
-  gap: $space-xs;
+  &__group {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
 
-  @include from-desktop {
-    flex-direction: column;
+    @include from-desktop {
+      flex-direction: column;
+    }
   }
-}
 
-.icon-rail__button {
-  @include flex-center;
-  width: 48px;
-  height: 48px;
-  border-radius: $radius-md;
-  transition: background-color $motion-fast $motion-easing;
+  &__button {
+    @include flex-center;
+    width: 48px;
+    height: 48px;
+    border-radius: $radius-md;
+    transition: background-color $motion-fast $motion-easing;
 
-  &:hover {
-    background: $color-surface-muted;
+    &:hover {
+      background: $color-surface-muted;
+    }
   }
-}
 
-.icon-rail__button--brand {
-  background: $color-surface;
-}
+  &__button--brand {
+    background: $color-surface;
+  }
 
-.icon-rail__org-icon {
-  border-radius: $radius-sm;
-  object-fit: cover;
-}
+  &__org-icon {
+    border-radius: $radius-sm;
+    object-fit: cover;
+  }
 
-.icon-rail__button--avatar {
-  background: $color-text-tertiary;
-  color: $color-accent-contrast;
-  border-radius: $radius-full;
-  font-size: $font-size-lg;
-  width: 40px;
-  height: 40px;
+  &__button--avatar {
+    background: $color-text-tertiary;
+    color: $color-accent-contrast;
+    border-radius: $radius-full;
+    font-size: $font-size-lg;
+    width: 40px;
+    height: 40px;
 
-  &:hover {
-    background: $color-avatar-hover;
+    &:hover {
+      background: $color-avatar-hover;
+    }
   }
 }

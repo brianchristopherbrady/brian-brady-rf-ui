@@ -3,56 +3,56 @@
 
 .mega-nav {
   margin-top: $space-xs;
-}
 
-.mega-nav__list {
-  @include flex-column;
-}
-
-.mega-nav__link {
-  display: flex;
-  align-items: center;
-  gap: $space-xs;
-  width: 100%;
-  padding: $space-xs $space-s;
-  border-radius: $radius-md;
-  font-size: $font-size-md;
-  font-weight: $font-weight-semibold;
-  color: $color-text-muted;
-  text-decoration: none;
-
-  &:hover {
-    background: $color-surface-muted;
+  &__list {
+    @include flex-column;
   }
 
-  &[aria-expanded='true'] {
-    background: $color-accent;
-    color: $color-accent-contrast;
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+    width: 100%;
+    padding: $space-xs $space-s;
+    border-radius: $radius-md;
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-text-muted;
+    text-decoration: none;
+
+    &:hover {
+      background: $color-surface-muted;
+    }
+
+    &[aria-expanded='true'] {
+      background: $color-accent;
+      color: $color-accent-contrast;
+    }
   }
-}
 
-.mega-nav__link--sub {
-  padding: $space-xs $space-s $space-xs $space-xxl;
+  &__link--sub {
+    padding: $space-xs $space-s $space-xs $space-xxl;
 
-  &:hover {
-    background: none;
-    color: $color-accent;
+    &:hover {
+      background: none;
+      color: $color-accent;
+    }
   }
-}
 
-.mega-nav__icon-placeholder {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: $radius-sm;
-  background: currentColor;
-  opacity: 0.85;
-}
+  &__icon-placeholder {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: $radius-sm;
+    background: currentColor;
+    opacity: 0.85;
+  }
 
-.mega-nav__sublist {
-  @include flex-column;
+  &__sublist {
+    @include flex-column;
 
-  &[hidden] {
-    display: none;
+    &[hidden] {
+      display: none;
+    }
   }
 }

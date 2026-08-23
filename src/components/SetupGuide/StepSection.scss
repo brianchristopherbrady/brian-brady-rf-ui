@@ -5,10 +5,10 @@
   @include flex-column;
   gap: $space-xs;
   container-type: inline-size;
-}
 
-.step-section__label {
-  font-size: $font-size-md;
-  font-weight: $font-weight-regular;
-  color: $color-text-tertiary;
+  &__label {
+    font-size: $font-size-md;
+    font-weight: $font-weight-regular;
+    color: $color-text-tertiary;
+  }
 }

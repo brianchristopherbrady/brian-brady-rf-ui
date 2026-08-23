@@ -6,25 +6,25 @@
   gap: $space-m;
   padding-top: $space-m;
   border-top: 1px solid $color-border;
-}
 
-.accordion-section__header {
-  display: flex;
-  align-items: center;
-  gap: $space-m;
-}
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $space-m;
+  }
 
-.accordion-section__icon {
-  flex-shrink: 0;
-}
+  &__icon {
+    flex-shrink: 0;
+  }
 
-.accordion-section__title {
-  font-size: $font-size-xl;
-  font-weight: $font-weight-semibold;
-  color: $color-text-primary;
-}
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+  }
 
-.accordion-section__steps {
-  @include flex-column;
-  gap: $space-l;
+  &__steps {
+    @include flex-column;
+    gap: $space-l;
+  }
 }

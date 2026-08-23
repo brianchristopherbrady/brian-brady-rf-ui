@@ -16,58 +16,58 @@
   background: $color-surface;
   border: 1px solid $color-border;
   border-radius: $radius-sm;
-}
 
-.workflow-card__button {
-  @include flex-column;
-  justify-content: center;
-  gap: $space-xxs;
-  width: 100%;
-  height: 100%;
-  min-height: calc(4.5rem + (#{$space-m} * 2));
-  padding: $space-m $space-l;
-  text-align: left;
-  transition:
-    background-color $motion-fast $motion-easing,
-    transform $motion-fast $motion-easing;
-
-  &:hover {
-    background: $color-surface-muted;
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
-.workflow-card__header {
-  display: flex;
-  align-items: center;
-  gap: $space-xs;
-}
-
-.workflow-card__icon {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-}
-
-.workflow-card__title {
-  font-size: $font-size-sm;
-  font-weight: $font-weight-bold;
-  color: $color-text-primary;
-}
-
-.workflow-card__description {
-  font-size: $font-size-xs;
-  color: $color-text-secondary;
-}
-
-.workflow-card__button--cta {
-  align-items: center;
-  text-align: center;
-
-  .workflow-card__header {
+  &__button {
+    @include flex-column;
     justify-content: center;
+    gap: $space-xxs;
+    width: 100%;
+    height: 100%;
+    min-height: calc(4.5rem + (#{$space-m} * 2));
+    padding: $space-m $space-l;
+    text-align: left;
+    transition:
+      background-color $motion-fast $motion-easing,
+      transform $motion-fast $motion-easing;
+
+    &:hover {
+      background: $color-surface-muted;
+    }
+
+    &:active {
+      transform: scale($motion-press-scale);
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: $space-xs;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  &__title {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+
+  &__description {
+    font-size: $font-size-xs;
+    color: $color-text-secondary;
+  }
+
+  &__button--cta {
+    align-items: center;
+    text-align: center;
+
+    .workflow-card__header {
+      justify-content: center;
+    }
   }
 }
