@@ -26,10 +26,10 @@ export function PageHeader({ title, date, location, onEditEvent }: PageHeaderPro
         </div>
       </div>
       <div className="page-header__actions">
+        <ThemeSwitcher />
         <button type="button" className="button button--primary page-header__action" onClick={onEditEvent}>
           Edit event
         </button>
-        <ThemeSwitcher />
       </div>
     </header>
   );

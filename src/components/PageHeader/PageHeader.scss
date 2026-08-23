@@ -44,8 +44,8 @@
 
 .page-header__actions {
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   gap: $space-xs;
   margin-left: auto;
 }
