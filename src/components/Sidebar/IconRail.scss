@@ -27,9 +27,7 @@
 }
 
 .icon-rail__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   width: 48px;
   height: 48px;
   border-radius: $radius-md;

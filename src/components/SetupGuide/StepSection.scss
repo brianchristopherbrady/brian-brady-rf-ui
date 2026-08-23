@@ -1,8 +1,8 @@
 @use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
 
 .step-section {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: $space-xs;
   container-type: inline-size;
 }

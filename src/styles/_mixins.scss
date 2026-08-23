@@ -1,5 +1,16 @@
 @use 'tokens' as *;
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin from-desktop {
   @media (min-width: #{$breakpoint-desktop}) {
     @content;

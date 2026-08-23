@@ -1,13 +1,13 @@
 @use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
 
 .toast-viewport {
+  @include flex-column;
   position: fixed;
   z-index: 100;
   bottom: $space-m;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
   align-items: center;
   gap: $space-xs;
   padding-inline: $space-s;

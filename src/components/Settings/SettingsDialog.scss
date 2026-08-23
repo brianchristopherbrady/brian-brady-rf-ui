@@ -16,8 +16,7 @@
 }
 
 .settings-dialog__panel {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 }
 
 .settings-dialog__header {
@@ -51,8 +50,7 @@
 }
 
 .settings-dialog__body {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: $space-m;
   padding: $space-m;
 }
@@ -100,9 +98,7 @@
 }
 
 .settings-dialog__control {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
   gap: $space-xxs;
   min-height: 36px;
   padding-inline: $space-xxs;

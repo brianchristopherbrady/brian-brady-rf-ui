@@ -6,8 +6,7 @@
 }
 
 .mega-nav__list {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 }
 
 .mega-nav__link {
@@ -51,8 +50,7 @@
 }
 
 .mega-nav__sublist {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
 
   &[hidden] {
     display: none;

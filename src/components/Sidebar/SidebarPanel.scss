@@ -2,8 +2,7 @@
 @use '../../styles/mixins' as *;
 
 .sidebar-panel {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: $space-s;
   padding: $space-s;
 

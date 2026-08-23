@@ -1,8 +1,8 @@
 @use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
 
 .accordion-section {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: $space-m;
   padding-top: $space-m;
   border-top: 1px solid $color-border;
@@ -25,7 +25,6 @@
 }
 
 .accordion-section__steps {
-  display: flex;
-  flex-direction: column;
+  @include flex-column;
   gap: $space-l;
 }
