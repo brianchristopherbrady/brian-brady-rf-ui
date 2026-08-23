@@ -18,8 +18,8 @@
 }
 
 @mixin focus-ring {
-  outline: 2px solid $color-focus-ring;
-  outline-offset: 2px;
+  outline: $focus-ring-width solid $color-focus-ring;
+  outline-offset: $focus-ring-offset;
 }
 
 @mixin visually-hidden {

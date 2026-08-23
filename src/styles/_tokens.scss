@@ -50,6 +50,17 @@ $radius-sm: var(--radius-sm); // cards, buttons, inputs
 $radius-md: var(--radius-md); // nav icon buttons, logo image
 $radius-full: var(--radius-full); // avatar, icon placeholders
 
+// ---- Focus ------------------------------------------------------------
+$focus-ring-width: 2px;
+$focus-ring-offset: 2px;
+
+// ---- Elevation and layering -------------------------------------------
+$shadow-toast: 0 4px 12px rgb(0 0 0 / 20%);
+$shadow-dialog: 0 20px 48px rgb(0 0 0 / 30%);
+$overlay-dialog: rgb(0 0 0 / 55%);
+$layer-skip-link: 100;
+$layer-toast: 200;
+
 // ---- Layout -------------------------------------------------------------
 $sidebar-rail-width: 63px;
 $sidebar-panel-width: 215px;
@@ -60,6 +71,8 @@ $content-max-width: 1400px; // caps line length on ultra-wide screens
 $motion-fast: 0.15s;
 $motion-base: 0.2s;
 $motion-easing: ease;
+$motion-press-scale: 0.98;
+$motion-reduced-duration: 0.01ms;
 
 // ---- Breakpoints ----------------------------------------------------------
 $breakpoint-desktop: 768px;

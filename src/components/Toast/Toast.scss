@@ -4,7 +4,7 @@
 .toast-viewport {
   @include flex-column;
   position: fixed;
-  z-index: 100;
+  z-index: $layer-toast;
   bottom: $space-m;
   left: 50%;
   transform: translateX(-50%);
@@ -22,7 +22,7 @@
   color: $color-surface;
   font-size: $font-size-sm;
   font-weight: $font-weight-medium;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: $shadow-toast;
   animation: toast-reveal $motion-base $motion-easing;
 }
 

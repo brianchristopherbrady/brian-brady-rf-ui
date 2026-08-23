@@ -48,9 +48,9 @@ body {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: $motion-reduced-duration !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: $motion-reduced-duration !important;
   }
 }
 
@@ -79,7 +79,7 @@ body {
     }
 
     &:active {
-      transform: scale(0.97);
+      transform: scale($motion-press-scale);
     }
   }
 }
@@ -98,6 +98,6 @@ body {
     background: $color-accent;
     color: $color-accent-contrast;
     border-radius: $radius-sm;
-    z-index: 100;
+    z-index: $layer-skip-link;
   }
 }
