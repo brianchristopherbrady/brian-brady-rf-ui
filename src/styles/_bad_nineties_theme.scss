@@ -1,0 +1,64 @@
+html[data-theme='bad-nineties'] {
+	color-scheme: dark;
+	--color-text-primary: #ffff00;
+	--color-text-secondary: #00ffff;
+	--color-text-tertiary: #ff66ff;
+	--color-text-muted: #c0c0c0;
+	--color-accent: #ff00ff;
+	--color-accent-hover: #00ffff;
+	--color-accent-contrast: #000000;
+	--color-surface: #000080;
+	--color-surface-muted: #000000;
+	--color-border: #00ffff;
+	--color-focus-ring: #ffff00;
+	--color-avatar-hover: #ff00ff;
+	--font-family-primary: 'Comic Sans MS', 'Comic Sans', cursive;
+	--radius-sm: 0;
+	--radius-md: 0;
+	--radius-full: 0;
+
+	body {
+		background-color: #000080;
+		background-image:
+			linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%),
+			linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%);
+		background-position: 0 0, 8px 8px;
+		background-size: 16px 16px;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		font-family: 'Times New Roman', Times, serif;
+		text-shadow: 2px 2px #ff00ff;
+	}
+
+	a {
+		color: #00ffff;
+		text-decoration: underline;
+	}
+
+	.app__main {
+		border-left: 4px ridge #c0c0c0;
+	}
+
+	.button,
+	.mega-nav__link,
+	.sidebar__menu-toggle,
+	.icon-rail__button {
+		border: 3px outset #c0c0c0;
+		box-shadow: 2px 2px 0 #000000;
+
+		&:active {
+			border-style: inset;
+		}
+	}
+
+	.task-chip,
+	.workflow-card,
+	.sidebar__search {
+		border: 3px ridge #c0c0c0;
+		box-shadow: 4px 4px 0 #ff00ff;
+	}
+}

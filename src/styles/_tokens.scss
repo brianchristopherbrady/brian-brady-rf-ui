@@ -1,20 +1,22 @@
 // ---- Color ----------------------------------------------------------------
-$color-text-primary: #222222; // headings
-$color-text-secondary: #393551; // body copy
-$color-text-tertiary: #444444; // step labels, small icon strokes
-$color-text-muted: #767676; // inactive nav items, placeholder copy
+$color-text-primary: var(--color-text-primary); // headings
+$color-text-secondary: var(--color-text-secondary); // body copy
+$color-text-tertiary: var(--color-text-tertiary); // step labels, small icon strokes
+$color-text-muted: var(--color-text-muted); // inactive nav items, placeholder copy
 
-$color-accent: #5c00dc; // RainFocus purple, primary brand action color
-$color-accent-contrast: #ffffff; // text/icon color on top of $color-accent
+$color-accent: var(--color-accent); // RainFocus purple, primary brand action color
+$color-accent-hover: var(--color-accent-hover);
+$color-accent-contrast: var(--color-accent-contrast); // text/icon color on top of $color-accent
 
-$color-surface: #ffffff; // cards, sidebar, page background
-$color-surface-muted: #f5f5f5; // search field fill
-$color-border: #cbc6de; // dividers, card + input borders
+$color-surface: var(--color-surface); // cards, sidebar, page background
+$color-surface-muted: var(--color-surface-muted); // search field fill
+$color-border: var(--color-border); // dividers, card + input borders
 
-$color-focus-ring: #005fcc; // accessible focus outline, not present in Figma
+$color-focus-ring: var(--color-focus-ring); // accessible focus outline, not present in Figma
+$color-avatar-hover: var(--color-avatar-hover);
 
 // ---- Typography -------------------------------------------------------
-$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-primary: var(--font-family-primary);
 
 $font-size-2xs: 0.625rem; // 10px - sidebar meta
 $font-size-xs: 0.75rem; // 12px - card descriptions
@@ -44,9 +46,9 @@ $space-xl: 2.5rem; // 40px
 $space-xxl: 3rem; // 48px
 
 // ---- Radius -----------------------------------------------------------
-$radius-sm: 4px; // cards, buttons, inputs
-$radius-md: 8px; // nav icon buttons, logo image
-$radius-full: 999px; // avatar, icon placeholders
+$radius-sm: var(--radius-sm); // cards, buttons, inputs
+$radius-md: var(--radius-md); // nav icon buttons, logo image
+$radius-full: var(--radius-full); // avatar, icon placeholders
 
 // ---- Layout -------------------------------------------------------------
 $sidebar-rail-width: 63px;
