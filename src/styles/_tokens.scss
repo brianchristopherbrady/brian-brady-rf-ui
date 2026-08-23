@@ -37,13 +37,13 @@ $line-height-normal: 1.35;
 $line-height-relaxed: 1.5;
 
 // ---- Spacing (8px base scale, as used throughout the design) --------------
-$space-xxs: 0.25rem; // 4px
-$space-xs: 0.5rem; // 8px
-$space-s: 1rem; // 16px
-$space-m: 1.5rem; // 24px
-$space-l: 2rem; // 32px
-$space-xl: 2.5rem; // 40px
-$space-xxl: 3rem; // 48px
+$space-xxs: var(--space-xxs); // 4px
+$space-xs: var(--space-xs); // 8px
+$space-s: var(--space-s); // 16px
+$space-m: var(--space-m); // 24px
+$space-l: var(--space-l); // 32px
+$space-xl: var(--space-xl); // 40px
+$space-xxl: var(--space-xxl); // 48px
 
 // ---- Radius -----------------------------------------------------------
 $radius-sm: var(--radius-sm); // cards, buttons, inputs

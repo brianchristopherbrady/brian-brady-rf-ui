@@ -13,7 +13,7 @@
 .task-chip {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: $space-xxs;
   min-width: 0;
   flex: 0 1 14rem;
   max-width: 14rem;

@@ -39,7 +39,7 @@
 
 .sidebar-panel__search-icon {
   position: absolute;
-  left: 4px;
+  left: $space-xxs;
   width: 16px;
   height: 16px;
   pointer-events: none;
@@ -47,7 +47,8 @@
 
 .sidebar-panel__search input {
   width: 100%;
-  padding: 4px 4px 4px 24px;
+  padding: $space-xxs;
+  padding-left: calc(16px + #{$space-xs});
   background: $color-surface-muted;
   border: 1px solid transparent;
   border-radius: $radius-sm;

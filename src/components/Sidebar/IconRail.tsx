@@ -1,5 +1,8 @@
+import { useRef } from 'react';
+import { Settings as SettingsIcon } from 'lucide-react';
 import logoMark from '../../assets/icons/logo-rainfocus-mark.svg';
 import orgLogo from '../../assets/images/event-logo.png';
+import { SettingsDialog } from '../Settings/SettingsDialog';
 import './IconRail.scss';
 
 /** props for the sidebar icon rail. */
@@ -9,6 +12,9 @@ interface IconRailProps {
 
 /** displays brand, organization, and account controls. */
 export function IconRail({ userInitials }: IconRailProps) {
+  const settingsDialogRef = useRef<HTMLDialogElement>(null);
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
+
   return (
     <div className="icon-rail">
       <div className="icon-rail__group">
@@ -19,9 +25,22 @@ export function IconRail({ userInitials }: IconRailProps) {
           <img src={orgLogo} alt="" className="icon-rail__org-icon" width={32} height={32} />
         </button>
       </div>
-      <button type="button" className="icon-rail__button icon-rail__button--avatar" aria-label="Account menu">
-        {userInitials}
-      </button>
+      <div className="icon-rail__group icon-rail__group--bottom">
+        <button
+          ref={settingsButtonRef}
+          type="button"
+          className="icon-rail__button"
+          aria-label="Settings"
+          title="Settings"
+          onClick={() => settingsDialogRef.current?.showModal()}
+        >
+          <SettingsIcon size={22} aria-hidden="true" />
+        </button>
+        <button type="button" className="icon-rail__button icon-rail__button--avatar" aria-label="Account menu">
+          {userInitials}
+        </button>
+      </div>
+      <SettingsDialog dialogRef={settingsDialogRef} triggerRef={settingsButtonRef} />
     </div>
   );
 }

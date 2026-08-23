@@ -1,5 +1,4 @@
 import eventLogo from '../../assets/images/event-logo.png';
-import { ThemeSwitcher } from './ThemeSwitcher';
 import './PageHeader.scss';
 
 /** propps for the event page header. */
@@ -25,12 +24,9 @@ export function PageHeader({ title, date, location, onEditEvent }: PageHeaderPro
           </p>
         </div>
       </div>
-      <div className="page-header__actions">
-        <ThemeSwitcher />
-        <button type="button" className="button button--primary page-header__action" onClick={onEditEvent}>
-          Edit event
-        </button>
-      </div>
+      <button type="button" className="button button--primary page-header__action" onClick={onEditEvent}>
+        Edit event
+      </button>
     </header>
   );
 }
