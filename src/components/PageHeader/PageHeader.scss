@@ -42,6 +42,14 @@
   color: $color-text-secondary;
 }
 
+.page-header__actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: $space-xs;
+  margin-left: auto;
+}
+
 .page-header__action {
   flex-shrink: 0;
 }
