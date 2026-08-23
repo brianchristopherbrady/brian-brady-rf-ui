@@ -1,0 +1,75 @@
+@use 'sass:color';
+@use 'tokens' as *;
+@use 'mixins' as *;
+@use 'reset';
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  line-height: $line-height-relaxed;
+  color: $color-text-secondary;
+  background: $color-surface;
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  padding: $space-xs $space-s;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  border-radius: $radius-sm;
+  white-space: nowrap;
+
+  &--primary {
+    background: $color-accent;
+    color: $color-accent-contrast;
+    transition: background-color $motion-fast $motion-easing;
+
+    &:hover {
+      background: color.adjust($color-accent, $lightness: -8%);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
+
+.skip-link {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: $space-xs;
+    left: $space-xs;
+    width: auto;
+    height: auto;
+    padding: $space-xs $space-s;
+    clip: auto;
+    background: $color-accent;
+    color: $color-accent-contrast;
+    border-radius: $radius-sm;
+    z-index: 100;
+  }
+}

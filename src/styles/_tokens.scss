@@ -1,0 +1,63 @@
+// ---- Color ----------------------------------------------------------------
+$color-text-primary: #222222; // headings
+$color-text-secondary: #393551; // body copy
+$color-text-tertiary: #444444; // step labels, small icon strokes
+$color-text-muted: #767676; // inactive nav items, placeholder copy
+
+$color-accent: #5c00dc; // RainFocus purple, primary brand action color
+$color-accent-contrast: #ffffff; // text/icon color on top of $color-accent
+
+$color-surface: #ffffff; // cards, sidebar, page background
+$color-surface-muted: #f5f5f5; // search field fill
+$color-border: #cbc6de; // dividers, card + input borders
+
+$color-focus-ring: #005fcc; // accessible focus outline, not present in Figma
+
+// ---- Typography -------------------------------------------------------
+$font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+$font-size-2xs: 0.625rem; // 10px - sidebar meta
+$font-size-xs: 0.75rem; // 12px - card descriptions
+$font-size-sm: 0.8125rem; // 13px - card titles
+$font-size-md: 0.875rem; // 14px - nav labels, step labels
+$font-size-lg: 1rem; // 16px - body copy
+$font-size-xl: 1.25rem; // 20px - accordion group title
+$font-size-2xl: 1.5rem; // 24px - section title
+$font-size-3xl: 2rem; // 32px - page title
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-tight: 1.2;
+$line-height-normal: 1.35;
+$line-height-relaxed: 1.5;
+
+// ---- Spacing (8px base scale, as used throughout the design) --------------
+$space-xxs: 0.25rem; // 4px
+$space-xs: 0.5rem; // 8px
+$space-s: 1rem; // 16px
+$space-m: 1.5rem; // 24px
+$space-l: 2rem; // 32px
+$space-xl: 2.5rem; // 40px
+$space-xxl: 3rem; // 48px
+
+// ---- Radius -----------------------------------------------------------
+$radius-sm: 4px; // cards, buttons, inputs
+$radius-md: 8px; // nav icon buttons, logo image
+$radius-full: 999px; // avatar, icon placeholders
+
+// ---- Layout -------------------------------------------------------------
+$sidebar-rail-width: 63px;
+$sidebar-panel-width: 215px;
+$sidebar-width: $sidebar-rail-width + $sidebar-panel-width;
+$content-max-width: 1400px; // caps line length on ultra-wide screens
+
+// ---- Motion ---------------------------------------------------------------
+$motion-fast: 0.15s;
+$motion-base: 0.2s;
+$motion-easing: ease;
+
+// ---- Breakpoints ----------------------------------------------------------
+$breakpoint-desktop: 768px;

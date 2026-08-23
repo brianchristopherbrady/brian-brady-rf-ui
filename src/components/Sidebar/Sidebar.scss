@@ -1,0 +1,80 @@
+@use '../../styles/tokens' as *;
+@use '../../styles/mixins' as *;
+
+.sidebar {
+  flex-shrink: 0;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  @include from-desktop {
+    display: flex;
+    width: $sidebar-width;
+    border-bottom: none;
+    border-right: 1px solid $color-border;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+  }
+}
+
+.sidebar__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-xs $space-s;
+
+  @include from-desktop {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: $sidebar-rail-width;
+    height: 100%;
+    padding: 0;
+    border-right: 1px solid $color-border;
+  }
+}
+
+.sidebar__toggle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  padding: $space-xs $space-s;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+  min-height: 44px;
+  transition: background-color $motion-fast $motion-easing;
+
+  &:hover {
+    background: $color-surface-muted;
+  }
+
+  @include from-desktop {
+    display: none;
+  }
+}
+
+.sidebar__panel-wrap {
+  display: none;
+
+  &--open {
+    display: block;
+    animation: sidebar-panel-reveal $motion-base $motion-easing;
+  }
+
+  @include from-desktop {
+    display: block;
+    flex: 1;
+    animation: none;
+  }
+}
+
+@keyframes sidebar-panel-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

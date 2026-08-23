@@ -1,0 +1,74 @@
+@use '../../styles/tokens' as *;
+
+.workflow-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: $space-m;
+
+  @container (min-width: 45rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.workflow-card {
+  display: flex;
+  flex-direction: column;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+}
+
+.workflow-card__button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  min-height: 7.5rem;
+  padding: $space-m $space-l;
+  text-align: left;
+  transition:
+    background-color $motion-fast $motion-easing,
+    transform $motion-fast $motion-easing;
+
+  &:hover {
+    background: $color-surface-muted;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.workflow-card__header {
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.workflow-card__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.workflow-card__title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.workflow-card__description {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.workflow-card__button--cta {
+  align-items: center;
+  text-align: center;
+
+  .workflow-card__header {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,25 @@
+@use './styles/tokens' as *;
+@use './styles/mixins' as *;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  @include from-desktop {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+.app__main {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: $content-max-width;
+  container-type: inline-size;
+  padding-inline: clamp(#{$space-s}, 4vw, #{$space-xxl});
+  padding-block: clamp(#{$space-m}, 5vw, #{$space-xl}) $space-xl;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(#{$space-m}, 4vw, #{$space-xl});
+}

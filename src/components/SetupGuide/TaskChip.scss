@@ -1,0 +1,31 @@
+@use '../../styles/tokens' as *;
+
+.task-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-s $space-l;
+  padding: $space-s $space-m;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-sm;
+}
+
+.task-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  flex: 0 1 14rem;
+  max-width: 14rem;
+}
+
+.task-chip__title {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.task-chip__description {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}

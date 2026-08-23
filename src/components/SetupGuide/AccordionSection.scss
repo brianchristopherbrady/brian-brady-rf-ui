@@ -1,0 +1,31 @@
+@use '../../styles/tokens' as *;
+
+.accordion-section {
+  display: flex;
+  flex-direction: column;
+  gap: $space-m;
+  padding-top: $space-m;
+  border-top: 1px solid $color-border;
+}
+
+.accordion-section__header {
+  display: flex;
+  align-items: center;
+  gap: $space-m;
+}
+
+.accordion-section__icon {
+  flex-shrink: 0;
+}
+
+.accordion-section__title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.accordion-section__steps {
+  display: flex;
+  flex-direction: column;
+  gap: $space-l;
+}
