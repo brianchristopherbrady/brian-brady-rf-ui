@@ -21,9 +21,6 @@
   font-weight: $font-weight-semibold;
   color: $color-text-muted;
   text-decoration: none;
-  transition:
-    background-color $motion-fast $motion-easing,
-    color $motion-fast $motion-easing;
 
   &:hover {
     background: $color-surface-muted;
