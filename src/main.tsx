@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client'
 import './styles/global.scss'
 import App from './App.tsx'
 import { ToastProvider } from './components/Toast/ToastProvider.tsx'
+import { applyStoredPreferences } from './preferences.ts'
+
+applyStoredPreferences()
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

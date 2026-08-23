@@ -1,9 +1,15 @@
 import { useEffect, useState, type RefObject } from 'react';
 import { X } from 'lucide-react';
+import {
+  DENSITY_STORAGE_KEY,
+  THEME_STORAGE_KEY,
+  applyPreferences,
+  getStoredDensity,
+  getStoredTheme,
+  type Density,
+  type Theme,
+} from '../../preferences';
 import './SettingsDialog.scss';
-
-type Theme = 'light' | 'dark' | 'bad-nineties';
-type Density = 'cozy' | 'default' | 'compact';
 
 interface SettingsDialogProps {
   dialogRef: RefObject<HTMLDialogElement | null>;
@@ -22,34 +28,16 @@ const densityOptions: { label: string; value: Density }[] = [
   { label: 'Compact', value: 'compact' },
 ];
 
-function isTheme(value: string | null): value is Theme {
-  return themeOptions.some((option) => option.value === value);
-}
-
-function isDensity(value: string | null): value is Density {
-  return densityOptions.some((option) => option.value === value);
-}
-
 /** Provides persisted appearance and spacing preferences. */
 export function SettingsDialog({ dialogRef, triggerRef }: SettingsDialogProps) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const savedTheme = localStorage.getItem('rainfocus-theme');
-    return isTheme(savedTheme) ? savedTheme : 'light';
-  });
-  const [density, setDensity] = useState<Density>(() => {
-    const savedDensity = localStorage.getItem('rainfocus-density');
-    return isDensity(savedDensity) ? savedDensity : 'default';
-  });
+  const [theme, setTheme] = useState<Theme>(getStoredTheme);
+  const [density, setDensity] = useState<Density>(getStoredDensity);
 
   useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem('rainfocus-theme', theme);
-  }, [theme]);
-
-  useEffect(() => {
-    document.documentElement.dataset.density = density;
-    localStorage.setItem('rainfocus-density', density);
-  }, [density]);
+    applyPreferences(theme, density);
+    localStorage.setItem(THEME_STORAGE_KEY, theme);
+    localStorage.setItem(DENSITY_STORAGE_KEY, density);
+  }, [theme, density]);
 
   function closeDialog() {
     dialogRef.current?.close();
