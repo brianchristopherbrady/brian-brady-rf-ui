@@ -2,6 +2,17 @@
 
 A responsive React implementation of the RainFocus event setup guide UI challenge.
 
+## Run the submitted app
+
+No installation, build, or local server is required:
+
+1. Open the `build/` folder.
+2. Open `index.html` in a browser.
+
+The delivery requirements included a built `index.html` but did not specify whether it should require a web server. To make the submission straightforward to review, I chose to package the production app as a self-contained HTML file that runs directly from disk.
+
+For a typical production deployment, I would serve the app over HTTP and retain Vite's separate hashed JavaScript and CSS assets for browser caching. The single-file build is a delivery decision for this submission.
+
 ## Stack
 
 - React 19
@@ -9,7 +20,7 @@ A responsive React implementation of the RainFocus event setup guide UI challeng
 - Vite
 - Sass
 
-## Run locally
+## Local development
 
 ```bash
 npm install
@@ -17,10 +28,6 @@ npm run dev
 ```
 
 Vite starts the app at `http://localhost:5173` by default.
-
-## View the prebuilt app
-
-Open `build/index.html` in a browser. The build uses relative asset paths, so no install, server, or rebuild is required.
 
 ## Other commands
 
@@ -42,7 +49,7 @@ The production build is written to `build/`.
 
 ## Accessibility
 
-The page includes semantic landmarks, keyboard focus treatment, expandable controls, and focus restoration for the settings dialog.
+The page includes semantic landmarks, keyboard focus treatment, expandable controls, and focus management for the settings dialog.
 
 ## Validation
 
