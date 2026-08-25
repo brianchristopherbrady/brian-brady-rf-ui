@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { viteSingleFile } from 'vite-plugin-singlefile'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -7,5 +8,6 @@ export default defineConfig({
   build: {
     outDir: 'build',
   },
-  plugins: [react()],
+  // inlines JS/CSS as a classic script into index.html so it runs from file:// (module scripts are blocked there)
+  plugins: [react(), viteSingleFile()],
 })
