@@ -6,7 +6,7 @@
   padding: 0;
   color: $color-text-secondary;
   background: $color-surface;
-  border: 1px solid $color-border;
+  border: $border-default;
   border-radius: $radius-md;
   box-shadow: $shadow-dialog;
 
@@ -19,12 +19,11 @@
   }
 
   &__header {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     justify-content: space-between;
     gap: $space-s;
     padding: $space-s $space-m;
-    border-bottom: 1px solid $color-border;
+    border-bottom: $border-default;
 
     h2 {
       font-size: $font-size-xl;
@@ -36,8 +35,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    @include square(32px);
     flex-shrink: 0;
     border-radius: $radius-sm;
     color: $color-text-muted;
@@ -74,7 +72,7 @@
     gap: $space-xxs;
     padding: $space-xxs;
     background: $color-surface-muted;
-    border: 1px solid $color-border;
+    border: $border-default;
     border-radius: $radius-md;
   }
 
@@ -104,13 +102,12 @@
     border-radius: $radius-sm;
     font-size: $font-size-sm;
     font-weight: $font-weight-semibold;
-    color: $color-text-muted;
+    color: $color-text-on-muted;
   }
 
   &__swatch {
     flex: 0 0 auto;
-    width: 12px;
-    height: 12px;
+    @include square(12px);
     border: 1px solid currentColor;
     border-radius: $radius-full;
   }

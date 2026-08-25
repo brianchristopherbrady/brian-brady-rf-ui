@@ -18,7 +18,7 @@ export function IconRail({ userInitials }: IconRailProps) {
   return (
     <div className="icon-rail">
       <div className="icon-rail__group">
-        <a className="icon-rail__button icon-rail__button--brand" href="/" aria-label="RainFocus home">
+        <a className="icon-rail__button icon-rail__button--brand" href="./" aria-label="RainFocus home">
           <img src={logoMark} alt="" width={32} height={32} />
         </a>
         <button type="button" className="icon-rail__button" aria-label="Organization settings">

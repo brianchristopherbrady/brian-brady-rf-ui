@@ -4,13 +4,13 @@
 .sidebar {
   flex-shrink: 0;
   background: $color-surface;
-  border-bottom: 1px solid $color-border;
+  border-bottom: $border-default;
 
   @include from-desktop {
     display: flex;
     width: $sidebar-width;
     border-bottom: none;
-    border-right: 1px solid $color-border;
+    border-right: $border-default;
     position: sticky;
     top: 0;
     align-self: flex-start;
@@ -18,10 +18,14 @@
   }
 
   &__bar {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     justify-content: space-between;
     padding: $space-xs $space-s;
+
+    // fixes: cozy density causing horizontal scroll bar on very small screens
+    @include at-narrow-cozy {
+      padding-inline: $space-xs;
+    }
 
     @include from-desktop {
       flex-direction: column;
@@ -29,7 +33,7 @@
       width: $sidebar-rail-width;
       height: 100%;
       padding: 0;
-      border-right: 1px solid $color-border;
+      border-right: $border-default;
     }
   }
 
@@ -37,10 +41,14 @@
     font-size: $font-size-md;
     font-weight: $font-weight-semibold;
     padding: $space-xs $space-s;
-    border: 1px solid $color-border;
+    border: $border-default;
     border-radius: $radius-sm;
     min-height: 44px;
     transition: background-color $motion-fast $motion-easing;
+
+    @include at-narrow-cozy {
+      padding-inline: $space-xs;
+    }
 
     &:hover {
       background: $color-surface-muted;

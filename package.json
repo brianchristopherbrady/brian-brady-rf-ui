@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "oxlint",
+    "lint": "npm run lint:tokens && npm run typecheck",
+    "lint:tokens": "node scripts/lint-tokens.mjs",
+    "typecheck": "tsc -b",
     "test": "vitest run",
     "preview": "vite preview"
   },
@@ -24,7 +26,6 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
     "jsdom": "^30.0.1",
-    "oxlint": "^1.75.0",
     "sass": "^1.102.0",
     "typescript": "~6.0.2",
     "vite": "^7.3.6",

@@ -53,7 +53,7 @@ The page includes semantic landmarks, keyboard focus treatment, expandable contr
 
 ## Validation
 
-`npm run build` performs the strict TypeScript build and production bundle. `npm run lint` runs Oxlint. `npm test` covers persisted appearance preferences, dialog focus restoration, and navigation expansion contracts.
+`npm run build` performs the strict TypeScript build and production bundle. `npm run lint` validates Sass token usage and runs the TypeScript build. `npm test` covers persisted appearance preferences, dialog focus restoration, and navigation expansion contracts.
 
 ## Structure
 

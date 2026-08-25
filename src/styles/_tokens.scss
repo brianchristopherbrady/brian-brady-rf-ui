@@ -3,6 +3,7 @@ $color-text-primary: var(--color-text-primary); // headings
 $color-text-secondary: var(--color-text-secondary); // body copy
 $color-text-tertiary: var(--color-text-tertiary); // step labels, small icon strokes
 $color-text-muted: var(--color-text-muted); // inactive nav items, placeholder copy
+$color-text-on-muted: var(--color-text-on-muted); // small text on muted surfaces
 
 $color-accent: var(--color-accent); // RainFocus purple, primary brand action color
 $color-accent-hover: var(--color-accent-hover);
@@ -50,6 +51,9 @@ $radius-sm: var(--radius-sm); // cards, buttons, inputs
 $radius-md: var(--radius-md); // nav icon buttons, logo image
 $radius-full: var(--radius-full); // avatar, icon placeholders
 
+// ---- Borders ----------------------------------------------------------
+$border-default: 1px solid $color-border;
+
 // ---- Focus ------------------------------------------------------------
 $focus-ring-width: 2px;
 $focus-ring-offset: 2px;
@@ -75,4 +79,5 @@ $motion-press-scale: 0.98;
 $motion-reduced-duration: 0.01ms;
 
 // ---- Breakpoints ----------------------------------------------------------
+$breakpoint-narrow-max: 359px;
 $breakpoint-desktop: 768px;

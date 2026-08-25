@@ -5,11 +5,10 @@
   @include flex-column;
   gap: $space-m;
   padding-top: $space-m;
-  border-top: 1px solid $color-border;
+  border-top: $border-default;
 
   &__header {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: $space-m;
   }
 

@@ -6,4 +6,5 @@ HTMLDialogElement.prototype.showModal = function showModal() {
 
 HTMLDialogElement.prototype.close = function close() {
   this.open = false;
+  this.dispatchEvent(new Event('close'));
 };

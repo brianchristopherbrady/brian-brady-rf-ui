@@ -10,6 +10,8 @@
   --color-text-secondary: #393551;
   --color-text-tertiary: #444444;
   --color-text-muted: #767676;
+  // Intentionally darker than the design spec to meet WCAG AA contrast on muted surfaces.
+  --color-text-on-muted: #6d6d6d;
   --color-accent: #5c00dc;
   --color-accent-hover: #4500a6;
   --color-accent-contrast: #ffffff;
@@ -29,6 +31,11 @@
   --space-l: 2rem;
   --space-xl: 2.5rem;
   --space-xxl: 3rem;
+}
+
+html[data-theme='dark'],
+html[data-theme='bad-nineties'] {
+  --color-text-on-muted: var(--color-text-muted);
 }
 
 body {

@@ -9,8 +9,7 @@
   }
 
   &__link {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: $space-xs;
     width: 100%;
     padding: $space-xs $space-s;
@@ -41,8 +40,7 @@
 
   &__icon-placeholder {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    @include square(24px);
     border-radius: $radius-sm;
     background: currentColor;
     opacity: 0.85;

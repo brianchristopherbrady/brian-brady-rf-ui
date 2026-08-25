@@ -2,9 +2,12 @@
 @use '../../../styles/mixins' as *;
 
 .icon-rail {
-  display: flex;
-  align-items: center;
+  @include flex-align-center;
   gap: $space-xs;
+
+  @include at-narrow-cozy {
+    gap: $space-xxs;
+  }
 
   @include from-desktop {
     flex-direction: column;
@@ -16,9 +19,12 @@
   }
 
   &__group {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: $space-xs;
+
+    @include at-narrow-cozy {
+      gap: $space-xxs;
+    }
 
     @include from-desktop {
       flex-direction: column;
@@ -27,8 +33,8 @@
 
   &__button {
     @include flex-center;
-    width: 48px;
-    height: 48px;
+    @include square(48px);
+    padding: 0;
     border-radius: $radius-md;
     transition: background-color $motion-fast $motion-easing;
 
@@ -42,6 +48,7 @@
   }
 
   &__org-icon {
+    flex-shrink: 0;
     border-radius: $radius-sm;
     object-fit: cover;
   }
@@ -51,8 +58,7 @@
     color: $color-accent-contrast;
     border-radius: $radius-full;
     font-size: $font-size-lg;
-    width: 40px;
-    height: 40px;
+    @include square(40px);
 
     &:hover {
       background: $color-avatar-hover;

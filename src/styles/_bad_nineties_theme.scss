@@ -1,3 +1,5 @@
+$color-nineties-chrome: #c0c0c0;
+
 html[data-theme='bad-nineties'] {
 	color-scheme: dark;
 	--color-text-primary: #ffff00;
@@ -18,10 +20,10 @@ html[data-theme='bad-nineties'] {
 	--radius-full: 0;
 
 	body {
-		background-color: #000080;
+		background-color: var(--color-surface);
 		background-image:
-			linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%),
-			linear-gradient(45deg, #000000 25%, transparent 25%, transparent 75%, #000000 75%);
+			linear-gradient(45deg, var(--color-surface-muted) 25%, transparent 25%, transparent 75%, var(--color-surface-muted) 75%),
+			linear-gradient(45deg, var(--color-surface-muted) 25%, transparent 25%, transparent 75%, var(--color-surface-muted) 75%);
 		background-position: 0 0, 8px 8px;
 		background-size: 16px 16px;
 	}
@@ -31,24 +33,24 @@ html[data-theme='bad-nineties'] {
 	h3,
 	h4 {
 		font-family: 'Times New Roman', Times, serif;
-		text-shadow: 2px 2px #ff00ff;
+		text-shadow: 2px 2px var(--color-accent);
 	}
 
 	a {
-		color: #00ffff;
+		color: var(--color-accent-hover);
 		text-decoration: underline;
 	}
 
 	.app__main {
-		border-left: 4px ridge #c0c0c0;
+		border-left: 4px ridge $color-nineties-chrome;
 	}
 
 	.button,
 	.mega-nav__link,
 	.sidebar__toggle,
 	.icon-rail__button {
-		border: 3px outset #c0c0c0;
-		box-shadow: 2px 2px 0 #000000;
+		border: 3px outset $color-nineties-chrome;
+		box-shadow: 2px 2px 0 var(--color-surface-muted);
 
 		&:active {
 			border-style: inset;
@@ -58,7 +60,7 @@ html[data-theme='bad-nineties'] {
 	.task-chip,
 	.workflow-card,
 	.sidebar-panel__search {
-		border: 3px ridge #c0c0c0;
-		box-shadow: 4px 4px 0 #ff00ff;
+		border: 3px ridge $color-nineties-chrome;
+		box-shadow: 4px 4px 0 var(--color-accent);
 	}
 }

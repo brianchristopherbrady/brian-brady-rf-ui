@@ -15,7 +15,10 @@
 }
 
 .toast {
-  max-width: 32rem;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+  max-width: min(32rem, calc(100vw - #{$space-l}));
   padding: $space-xs $space-m;
   border-radius: $radius-sm;
   background: $color-text-primary;
@@ -24,6 +27,27 @@
   font-weight: $font-weight-medium;
   box-shadow: $shadow-toast;
   animation: toast-reveal $motion-base $motion-easing;
+  pointer-events: auto;
+
+  &__message {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  &__dismiss {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    @include square(32px);
+    flex-shrink: 0;
+    border-radius: $radius-sm;
+    color: inherit;
+
+    &:hover {
+      background: $color-surface;
+      color: $color-text-primary;
+    }
+  }
 }
 
 @keyframes toast-reveal {

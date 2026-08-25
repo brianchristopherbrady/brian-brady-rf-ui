@@ -14,7 +14,7 @@
 .workflow-card {
   @include flex-column;
   background: $color-surface;
-  border: 1px solid $color-border;
+  border: $border-default;
   border-radius: $radius-sm;
 
   &__button {
@@ -40,15 +40,13 @@
   }
 
   &__header {
-    display: flex;
-    align-items: center;
+    @include flex-align-center;
     gap: $space-xs;
   }
 
   &__icon {
     flex-shrink: 0;
-    width: 24px;
-    height: 24px;
+    @include square(24px);
   }
 
   &__title {

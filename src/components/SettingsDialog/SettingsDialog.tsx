@@ -41,7 +41,6 @@ export function SettingsDialog({ dialogRef, triggerRef }: SettingsDialogProps) {
 
   function closeDialog() {
     dialogRef.current?.close();
-    triggerRef.current?.focus();
   }
 
   return (
@@ -49,9 +48,12 @@ export function SettingsDialog({ dialogRef, triggerRef }: SettingsDialogProps) {
       ref={dialogRef}
       className="settings-dialog"
       aria-labelledby="settings-title"
-      onCancel={(event) => {
-        event.preventDefault();
-        closeDialog();
+      onClose={() => setTimeout(() => triggerRef.current?.focus())}
+      onKeyDown={(event) => {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          closeDialog();
+        }
       }}
       onMouseDown={(event) => event.target === event.currentTarget && closeDialog()}
     >
