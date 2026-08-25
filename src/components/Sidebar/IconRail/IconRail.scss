@@ -33,10 +33,28 @@
 
   &__button {
     @include flex-center;
-    @include square(48px);
+    @include square(clamp(44px, 13.375vw, 48px));
     padding: 0;
     border-radius: $radius-md;
     transition: background-color $motion-fast $motion-easing;
+
+    > img {
+      @include square(32px);
+    }
+
+    > svg {
+      @include square(22px);
+    }
+
+    @media (max-width: #{$breakpoint-narrow-max}) {
+      > img {
+        @include square(28px);
+      }
+
+      > svg {
+        @include square(20px);
+      }
+    }
 
     &:hover {
       background: $color-surface-muted;

@@ -1,4 +1,5 @@
 import eventLogo from '../../assets/images/event-logo.png';
+import { Button } from '../Button/Button';
 import './PageHeader.scss';
 
 /** Props for the event page header. */
@@ -24,9 +25,9 @@ export function PageHeader({ title, date, location, onEditEvent }: PageHeaderPro
           </p>
         </div>
       </div>
-      <button type="button" className="button button--primary page-header__action" onClick={onEditEvent}>
+      <Button variant="primary" className="page-header__action" onClick={onEditEvent}>
         Edit event
-      </button>
+      </Button>
     </header>
   );
 }

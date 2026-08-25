@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { Button } from '../Button/Button';
 import { IconRail } from './IconRail/IconRail';
 import { SidebarPanel } from './SidebarPanel/SidebarPanel';
 import './Sidebar.scss';
@@ -20,15 +21,15 @@ export function Sidebar({ eventName, location, date, userInitials }: SidebarProp
     <aside className="sidebar">
       <div className="sidebar__bar">
         <IconRail userInitials={userInitials} />
-        <button
-          type="button"
+        <Button
+          variant="secondary"
           className="sidebar__toggle"
           aria-expanded={isOpen}
           aria-controls={panelId}
           onClick={() => setIsOpen((open) => !open)}
         >
           {isOpen ? 'Close menu' : 'Menu'}
-        </button>
+        </Button>
       </div>
       <div id={panelId} className={`sidebar__panel-wrap${isOpen ? ' sidebar__panel-wrap--open' : ''}`}>
         <SidebarPanel eventName={eventName} location={location} date={date} />

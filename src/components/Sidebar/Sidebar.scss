@@ -38,20 +38,8 @@
   }
 
   &__toggle {
-    font-size: $font-size-md;
-    font-weight: $font-weight-semibold;
-    padding: $space-xs $space-s;
-    border: $border-default;
-    border-radius: $radius-sm;
-    min-height: 44px;
-    transition: background-color $motion-fast $motion-easing;
-
     @include at-narrow-cozy {
       padding-inline: $space-xs;
-    }
-
-    &:hover {
-      background: $color-surface-muted;
     }
 
     @include from-desktop {

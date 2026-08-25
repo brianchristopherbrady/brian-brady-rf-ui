@@ -65,32 +65,6 @@ body {
   @include visually-hidden;
 }
 
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: $space-xs;
-  padding: $space-xs $space-s;
-  font-size: $font-size-md;
-  font-weight: $font-weight-bold;
-  border-radius: $radius-sm;
-  white-space: nowrap;
-
-  &--primary {
-    background: $color-accent;
-    color: $color-accent-contrast;
-    transition: background-color $motion-fast $motion-easing;
-
-    &:hover {
-      background: $color-accent-hover;
-    }
-
-    &:active {
-      transform: scale($motion-press-scale);
-    }
-  }
-}
-
 .skip-link {
   @include visually-hidden;
 

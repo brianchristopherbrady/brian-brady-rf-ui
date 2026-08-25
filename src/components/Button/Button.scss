@@ -1,0 +1,42 @@
+@use '../../styles/tokens' as *;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  height: 44px;
+  padding-inline: $space-s;
+  border: $border-default;
+  border-radius: $radius-sm;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  white-space: nowrap;
+  transition:
+    background-color $motion-fast $motion-easing,
+    transform $motion-fast $motion-easing;
+
+  &:active {
+    transform: scale($motion-press-scale);
+  }
+
+  &--primary {
+    border-color: $color-accent;
+    background: $color-accent;
+    color: $color-accent-contrast;
+
+    &:hover {
+      border-color: $color-accent-hover;
+      background: $color-accent-hover;
+    }
+  }
+
+  &--secondary {
+    background: $color-surface;
+    color: $color-text-primary;
+
+    &:hover {
+      background: $color-surface-muted;
+    }
+  }
+}
