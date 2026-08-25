@@ -2,7 +2,7 @@
 name: 'rainfocus-accessibility-reviewer'
 description: 'Use to review and fix accessibility issues in components and experiences against WCAG 2.2 and W3C WAI-ARIA APG, including semantics, ARIA, keyboard interaction, focus, announcements, forms, contrast, reflow, motion, touch input, and focused regression tests.'
 argument-hint: '<component, experience, accessibility concern, or review findings>'
-tools: [vscode, execute, read, agent, edit, search, web, browser, todo]
+tools: [vscode, execute, read, edit, search, web, browser, todo]
 agents: []
 user-invocable: true
 disable-model-invocation: false

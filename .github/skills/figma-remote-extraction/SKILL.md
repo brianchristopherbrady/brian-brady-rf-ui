@@ -18,6 +18,38 @@ Use direct terminal-native HTTP and JSON operations to extract a requested Figma
 - Load the PAT inside the terminal process without displaying the file or token. Never ask for a PAT in chat.
 - Use the `X-Figma-Token` request header. Do not expose headers through verbose output or error reporting.
 
+## Safe Windows Execution
+
+Use one persistent PowerShell session for all authenticated operations. The command text may contain variable names, but must never contain the PAT value. Disable tracing and transcripts, assign HTTP responses to variables or files so raw responses are not printed, and do not use `Get-Content`, `type`, `cat`, editor reads, searches, or subagents on `user.env`.
+
+Load the single supported assignment without emitting it:
+
+```powershell
+Set-PSDebug -Trace 0
+$VerbosePreference = 'SilentlyContinue'
+$DebugPreference = 'SilentlyContinue'
+$repoRoot = (git rev-parse --show-toplevel).Trim()
+$envPath = Join-Path $repoRoot 'user.env'
+if (-not (Test-Path -LiteralPath $envPath)) { throw 'Repository-root user.env is missing.' }
+$tokenLine = [System.IO.File]::ReadLines($envPath) |
+  Where-Object { $_ -match '^\s*FIGMA_ACCESS_TOKEN\s*=' } |
+  Select-Object -First 1
+if (-not $tokenLine) { throw 'FIGMA_ACCESS_TOKEN is missing from user.env.' }
+$env:FIGMA_ACCESS_TOKEN = $tokenLine.Substring($tokenLine.IndexOf('=') + 1).Trim()
+Remove-Variable tokenLine
+if ([string]::IsNullOrWhiteSpace($env:FIGMA_ACCESS_TOKEN)) { throw 'FIGMA_ACCESS_TOKEN is empty.' }
+$figmaHeaders = @{ 'X-Figma-Token' = $env:FIGMA_ACCESS_TOKEN }
+```
+
+Use `Invoke-RestMethod` with `$figmaHeaders` and assign its result rather than allowing it to flow to terminal output. Keep signed asset URLs only in memory until each download completes. On completion or failure, clear credential state:
+
+```powershell
+Remove-Variable figmaHeaders -ErrorAction SilentlyContinue
+Remove-Item Env:FIGMA_ACCESS_TOKEN -ErrorAction SilentlyContinue
+```
+
+Do not use the unauthenticated web-fetch tool for Figma API calls. On non-Windows systems, apply the same properties with native tools: no command tracing, no token in command arguments, no raw credential-file output, no verbose HTTP logging, and explicit credential cleanup.
+
 ## 1. Resolve Scope
 
 Parse:
@@ -95,6 +127,8 @@ Create only data and asset outputs, not workflow scripts:
 `design-metadata.json` is the exact machine-readable record. `design-summary.md` highlights hierarchy, reusable colors, typography, spacing/sizing patterns, components, variants, interactions, hidden states, and ambiguities.
 
 The manifest must include every planned asset with source node ID, full path, filename, format, scale, dimensions, status, and sanitized error. Never include credentials, request headers, API response headers, or signed URLs.
+
+These files are extraction artifacts, not automatic application changes. Keep them in the approved output directory; only copy selected assets into `src/assets/icons` or `src/assets/images` when the user explicitly requests integration and confirms replacements or naming.
 
 ## 6. Verify
 

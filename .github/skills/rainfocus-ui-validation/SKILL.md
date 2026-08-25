@@ -35,6 +35,7 @@ Inspect the production build or development server at minimum at:
 | View | Width | Primary checks |
 | --- | --- | --- |
 | Narrow mobile | 320px | Text containment, mobile disclosure, controls, horizontal overflow |
+| Narrow/cozy edge | 359px and 360px | Cozy-density overflow fixes and narrow-only sizing |
 | Mobile | 390px | Stacking, dialog fit, touch targets, toast placement |
 | Breakpoint edges | 767px and 768px | Sidebar mode transition and content width |
 | Desktop | 1440px | Persistent navigation, content cap, grid/container-query behavior |

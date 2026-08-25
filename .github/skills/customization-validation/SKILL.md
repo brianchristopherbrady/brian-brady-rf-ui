@@ -19,7 +19,9 @@ The validator checks:
 - Frontmatter exists and includes a meaningful description.
 - Every skill name matches its parent folder.
 - Every agent name matches its `.agent.md` filename.
+- Every prompt name matches its `.prompt.md` filename and targets an existing custom or supported built-in agent.
 - Agent handoff targets resolve to existing `.agent.md` files.
+- Agents do not request the `agent` tool while setting `agents: []`.
 - Relative Markdown links resolve.
 - JavaScript module files pass `node --check`.
 

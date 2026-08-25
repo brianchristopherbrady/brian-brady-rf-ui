@@ -2,7 +2,7 @@
 name: 'rainfocus-ui-reviewer'
 description: 'Use to review and fix RainFocus UI issues involving behavioral regressions, responsive layout, accessibility, themes, density modes, design fidelity, browser rendering, delivery, and missing tests.'
 argument-hint: '<changed files, UI concern, review findings, approved scope, and acceptance criteria>'
-tools: [vscode, execute, read, agent, edit, search, web, browser, todo]
+tools: [vscode, execute, read, edit, search, web, browser, todo]
 agents: []
 user-invocable: true
 disable-model-invocation: false

@@ -12,6 +12,14 @@ disable-model-invocation: false
 
 Extract assets and design metadata directly from Figma's REST API. Do not create or depend on repository scripts. Use terminal-native HTTP and JSON commands for the current task, following the [Figma Remote Extraction](../skills/figma-remote-extraction/SKILL.md) skill.
 
+## Tool Contract
+
+- Use `execute` in one persistent PowerShell session for credential loading, authenticated API requests, JSON processing, and asset downloads.
+- Use `web` only for public Figma API documentation. It cannot safely supply the PAT header and must not make authenticated requests.
+- Never use `read`, `search`, editor tools, or a subagent to inspect `user.env`.
+- Use `edit` only for requested extraction outputs or approved application integration. Do not create workflow scripts.
+- Use the browser or image inspection tools to verify representative assets when available.
+
 ## Credential Contract
 
 - Look for `user.env` at the repository root before making an authenticated request.
@@ -20,6 +28,7 @@ Extract assets and design metadata directly from Figma's REST API. Do not create
 - Never use repository read/search tools on `user.env`, echo the token, log request headers, enable verbose HTTP tracing, or persist credentials in outputs.
 - Keep authenticated requests in the same terminal session that loaded the environment variable.
 - If `user.env` is absent, lacks `FIGMA_ACCESS_TOKEN`, or the API returns 401/403, report the credential/access problem without revealing response headers or secrets.
+- Remove the token and header variables from the terminal session when extraction finishes or fails.
 
 ## Scope Contract
 
@@ -64,6 +73,8 @@ Write beneath the user-approved output directory:
 - `assets.manifest.json`: source node, path, filename, format, scale, dimensions, and download status for every planned asset
 
 Normalize filenames to stable lowercase kebab-case, add a node-ID suffix for collisions, and never overwrite existing files without explicit approval. Use atomic or temporary-file writes where the terminal environment supports them.
+
+Keep extraction artifacts in the user-approved output directory. Do not copy assets into `src/assets/icons` or `src/assets/images`, alter React/SCSS, or replace existing assets unless application integration is explicitly part of the request.
 
 ## Verification
 
