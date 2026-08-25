@@ -1,13 +1,14 @@
-import addCircleIcon from '../../assets/icons/icon-add-circle.svg';
-import './WorkflowCard.scss';
+import addCircleIcon from '../../../assets/icons/icon-add-circle.svg';
+import '../WorkflowCard/WorkflowCard.scss';
+import './AddWorkflowCard.scss';
 
-/** props for the add-workflow action card. */
+/** Props for the add-workflow action card. */
 interface AddWorkflowCardProps {
   description: string;
   onAdd?: () => void;
 }
 
-/** displays a card button for creating a registration workflow. */
+/** Displays a card button for creating a registration workflow. */
 export function AddWorkflowCard({ description, onAdd }: AddWorkflowCardProps) {
   return (
     <li className="workflow-card">

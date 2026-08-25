@@ -4,15 +4,15 @@ import {
   postRegistrationCards,
   registrationWorkflowCards,
 } from '../../data/content';
-import { AccordionSection } from './AccordionSection';
-import { AddWorkflowCard } from './AddWorkflowCard';
-import { StepSection } from './StepSection';
-import { TaskChip } from './TaskChip';
-import { WorkflowCard } from './WorkflowCard';
+import { AccordionSection } from './AccordionSection/AccordionSection';
+import { AddWorkflowCard } from './AddWorkflowCard/AddWorkflowCard';
+import { StepSection } from './StepSection/StepSection';
+import { TaskChip } from './TaskChip/TaskChip';
+import { WorkflowCard } from './WorkflowCard/WorkflowCard';
 import { useToast } from '../Toast/toastContext';
 import './SetupGuide.scss';
 
-/** displays the attendee setup steps and workflow actions. */
+/** Displays the attendee setup steps and workflow actions. */
 export function SetupGuide() {
   const titleId = useId();
   const showToast = useToast();

@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState, type ReactNode } from 'react';
-import { ToastContext, type ShowToast } from './toastContext';
+import { ToastContext, type ShowToast } from '../toastContext';
 import './Toast.scss';
 
 /** A toast notification queued for display. */
@@ -8,10 +8,10 @@ interface ToastMessage {
   text: string;
 }
 
-/** time a toast remains visible before dismissal. */
+/** Time a toast remains visible before dismissal. */
 const TOAST_DURATION_MS = 3000;
 
-/** provides toast state and renders active notifications. */
+/** Provides toast state and renders active notifications. */
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const nextId = useRef(0);

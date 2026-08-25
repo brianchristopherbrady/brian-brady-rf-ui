@@ -1,16 +1,16 @@
-import searchIcon from '../../assets/icons/icon-search.svg';
-import { navItems } from '../../data/content';
-import { MegaNav } from './MegaNav';
+import searchIcon from '../../../assets/icons/icon-search.svg';
+import { navItems } from '../../../data/content';
+import { MegaNav } from '../MegaNav/MegaNav';
 import './SidebarPanel.scss';
 
-/** props for the expanded sidebar panel */
+/** Props for the expanded sidebar panel. */
 interface SidebarPanelProps {
   eventName: string;
   location: string;
   date: string;
 }
 
-/** displays search, and navigation */
+/** Displays event details, search, and navigation. */
 export function SidebarPanel({ eventName, location, date }: SidebarPanelProps) {
   return (
     <div className="sidebar-panel">

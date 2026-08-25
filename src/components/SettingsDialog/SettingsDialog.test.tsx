@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it } from 'vitest';
 import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { IconRail } from '../Sidebar/IconRail';
+import { IconRail } from '../Sidebar/IconRail/IconRail';
 
 afterEach(() => {
   cleanup();

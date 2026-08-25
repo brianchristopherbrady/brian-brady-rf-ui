@@ -1,17 +1,17 @@
 import { useId, useState } from 'react';
-import type { NavItem } from '../../data/content';
+import type { NavItem } from '../../../data/content';
 import './MegaNav.scss';
 
 /** Supported expansion behaviors for the event navigation menu. */
 export type ExpandMode = 'single' | 'multi';
 
-/** props for the event navigation menu */
+/** Props for the event navigation menu. */
 interface MegaNavProps {
   navigationItems: NavItem[];
   expandMode?: ExpandMode;
 }
 
-/** displays expandable event navigation groups and their links. */
+/** Displays expandable event navigation groups and their links. */
 export function MegaNav({ navigationItems, expandMode = 'multi' }: MegaNavProps) {
   // generates a unique id for the navigation menu to associate with sub-navigation lists
   const navigationId = useId();
@@ -23,7 +23,7 @@ export function MegaNav({ navigationItems, expandMode = 'multi' }: MegaNavProps)
         .map((navigationItem) => navigationItem.label)),
   );
 
-  /** toggles a navigation group's expanded state */
+  /** Toggles a navigation group's expanded state. */
   function toggleExpandedItem(itemLabel: string) {
     // updates react state
     setExpandedItemLabels((currentExpandedLabels) => {

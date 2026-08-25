@@ -45,7 +45,7 @@ html[data-theme='bad-nineties'] {
 
 	.button,
 	.mega-nav__link,
-	.sidebar__menu-toggle,
+	.sidebar__toggle,
 	.icon-rail__button {
 		border: 3px outset #c0c0c0;
 		box-shadow: 2px 2px 0 #000000;
@@ -57,7 +57,7 @@ html[data-theme='bad-nineties'] {
 
 	.task-chip,
 	.workflow-card,
-	.sidebar__search {
+	.sidebar-panel__search {
 		border: 3px ridge #c0c0c0;
 		box-shadow: 4px 4px 0 #ff00ff;
 	}

@@ -1,7 +1,7 @@
-import type { TaskChip as TaskChipData } from '../../data/content';
+import type { TaskChip as TaskChipData } from '../../../data/content';
 import './TaskChip.scss';
 
-/** displays a setup task title and description */
+/** Displays a setup task title and description. */
 export function TaskChip({ title, description }: TaskChipData) {
   return (
     <li className="task-chip">

@@ -33,26 +33,16 @@ npm run preview
 
 The production build is written to `build/`.
 
-## Design system
+## Implementation notes
 
-Shared foundations live in `src/styles/`:
-
-- `_tokens.scss` defines semantic Sass aliases for color, typography, spacing, radius, layout, motion, focus, elevation, and layers.
-- Theme and density values use CSS custom properties because they change at runtime. Component-local geometry stays with the component that owns it.
-- `_mixins.scss` contains only repeated layout, focus, breakpoint, and visually-hidden patterns.
-- Component SCSS consumes semantic tokens and keeps state styling beside the component.
-
-The settings dialog persists theme and density preferences in `localStorage`. `src/preferences.ts` validates and applies those values before React mounts, while the dialog updates the same shared contract.
-
-## Responsive architecture
-
-The layout uses one 768px viewport breakpoint to switch the sidebar between a mobile disclosure and a persistent desktop rail. Content adapts intrinsically with flex wrapping, `clamp()`, `auto-fit`, and `minmax()`. The workflow grid uses a local container query because its card count depends on available content width rather than the viewport.
-
-Density changes the shared spacing scale rather than selecting separate component layouts. Stable controls and brand assets retain explicit dimensions to prevent layout shift.
+- Shared Sass tokens and mixins live in `src/styles/`.
+- The sidebar switches between a mobile disclosure and a persistent desktop rail at 768px.
+- Workflow grids use container queries to adapt to their available content width.
+- Theme and density preferences are validated, stored in `localStorage`, and applied before React mounts.
 
 ## Accessibility
 
-The page includes a skip link, semantic landmarks and headings, visible focus treatment, labelled disclosures, and a polite toast live region. Settings use a native `<dialog>` and fieldsets with radio controls; closing the dialog restores focus to its trigger. Decorative icons are hidden from assistive technology, and reduced-motion preferences shorten transitions and animations.
+The page includes semantic landmarks, keyboard focus treatment, expandable controls, and focus restoration for the settings dialog.
 
 ## Validation
 

@@ -1,14 +1,14 @@
 import { useId, type ReactNode } from 'react';
-import personPortalIcon from '../../assets/icons/icon-person-portal.svg';
+import personPortalIcon from '../../../assets/icons/icon-person-portal.svg';
 import './AccordionSection.scss';
 
-/** props for a setup guide section. */
+/** Props for a setup guide section. */
 interface AccordionSectionProps {
   title: string;
   children: ReactNode;
 }
 
-/** groups related setup steps under a labelled section. */
+/** Groups related setup steps under a labelled section. */
 export function AccordionSection({ title, children }: AccordionSectionProps) {
   const titleId = useId();
 

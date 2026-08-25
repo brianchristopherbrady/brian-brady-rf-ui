@@ -1,16 +1,16 @@
 import { useRef } from 'react';
 import { Settings as SettingsIcon } from 'lucide-react';
-import logoMark from '../../assets/icons/logo-rainfocus-mark.svg';
-import orgLogo from '../../assets/images/event-logo.png';
-import { SettingsDialog } from '../Settings/SettingsDialog';
+import logoMark from '../../../assets/icons/logo-rainfocus-mark.svg';
+import orgLogo from '../../../assets/images/event-logo.png';
+import { SettingsDialog } from '../../SettingsDialog/SettingsDialog';
 import './IconRail.scss';
 
-/** props for the sidebar icon rail. */
+/** Props for the sidebar icon rail. */
 interface IconRailProps {
   userInitials: string;
 }
 
-/** displays brand, organization, and account controls. */
+/** Displays brand, organization, and account controls. */
 export function IconRail({ userInitials }: IconRailProps) {
   const settingsDialogRef = useRef<HTMLDialogElement>(null);
   const settingsButtonRef = useRef<HTMLButtonElement>(null);

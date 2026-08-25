@@ -1,16 +1,16 @@
-/** link nested under a top-level navigation item. */
+/** Link nested under a top-level navigation item. */
 export interface NavSubItem {
   label: string;
 }
 
-/** top-level event navigation item. */
+/** Top-level event navigation item. */
 export interface NavItem {
   label: string;
   active?: boolean;
   subItems?: NavSubItem[];
 }
 
-/** navigation groups displayed in the event sidebar. */
+/** Navigation groups displayed in the event sidebar. */
 export const navItems: NavItem[] = [
   {
     label: 'Guide',
@@ -49,44 +49,44 @@ export const navItems: NavItem[] = [
   },
 ];
 
-/** content displayed in a base-settings task chip. */
+/** Content displayed in a base-settings task chip. */
 export interface TaskChip {
   title: string;
   description: string;
 }
 
-/** base settings tasks displayed in the first setup step. */
+/** Base settings tasks displayed in the first setup step. */
 export const baseSettingsTasks: TaskChip[] = [
   { title: 'General', description: 'Define Attendee types & attributes' },
   {
-    title: 'Title',
-    description: 'Description that explains the value goes here. Description that explains the value goes here.',
+    title: 'Attendee types',
+    description: 'Define attendee categories and the information collected for each.',
   },
   {
-    title: 'Title',
-    description: 'Description that explains the value goes here. Description that explains the value goes here.',
+    title: 'Packages',
+    description: 'Group registration options, pricing, and attendee benefits.',
   },
 ];
 
-/** content and icon selection for a workflow card. */
+/** Content and icon selection for a workflow card. */
 export interface WorkflowCard {
   icon: 'logic-arrow' | 'computer';
   title: string;
   description: string;
 }
 
-/** registration workflows displayed in the second setup step. */
+/** Registration workflows displayed in the second setup step. */
 export const registrationWorkflowCards: WorkflowCard[] = [
   { icon: 'logic-arrow', title: 'Attendee Registration', description: 'Start by creating a general registration workflow' },
-  { icon: 'logic-arrow', title: 'Attendee Registration', description: 'Start by creating a general registration workflow' },
-  { icon: 'logic-arrow', title: 'Attendee Registration', description: 'Start by creating a general registration workflow' },
+  { icon: 'logic-arrow', title: 'VIP Registration', description: 'Create a tailored registration workflow for VIP guests' },
+  { icon: 'logic-arrow', title: 'Staff Registration', description: 'Configure registration for event staff and volunteers' },
 ];
 
-/** post-registration experiences displayed in the third setup step */
+/** Post-registration experiences displayed in the third setup step. */
 export const postRegistrationCards: WorkflowCard[] = [
   {
     icon: 'computer',
     title: 'Attendee Portal',
-    description: 'Manage the portal that attendees will see after they\u2019ve register for your event.',
+    description: 'Manage the portal that attendees will see after they\u2019ve registered for your event.',
   },
 ];

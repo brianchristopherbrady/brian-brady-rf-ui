@@ -4,10 +4,9 @@ import { SetupGuide } from './components/SetupGuide/SetupGuide';
 import { useToast } from './components/Toast/toastContext';
 import './App.scss';
 
-/** Name displayed throughout the event interface. */
+/** Header data. */
 const EVENT_NAME = 'RainFocus Summit';
 
-/** Date displayed in the event header and sidebar. */
 const EVENT_DATE = 'December 15th';
 
 const EVENT_LOCATION = 'Lehi, UT';

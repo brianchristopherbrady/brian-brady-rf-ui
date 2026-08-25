@@ -1,5 +1,5 @@
-@use '../../styles/tokens' as *;
-@use '../../styles/mixins' as *;
+@use '../../../styles/tokens' as *;
+@use '../../../styles/mixins' as *;
 
 .workflow-card-grid {
   display: grid;
@@ -60,14 +60,5 @@
   &__description {
     font-size: $font-size-xs;
     color: $color-text-secondary;
-  }
-
-  &__button--cta {
-    align-items: center;
-    text-align: center;
-
-    .workflow-card__header {
-      justify-content: center;
-    }
   }
 }

@@ -1,13 +1,13 @@
-import type { WorkflowCard as WorkflowCardData } from '../../data/content';
-import { workflowIcons } from './icons';
+import type { WorkflowCard as WorkflowCardData } from '../../../data/content';
+import { workflowIcons } from '../icons';
 import './WorkflowCard.scss';
 
-/** props for an interactive workflow card */
+/** Props for an interactive workflow card. */
 interface WorkflowCardProps extends WorkflowCardData {
   onSelect?: () => void;
 }
 
-/** displays a selectable workflow with its icon and description */
+/** Displays a selectable workflow with its icon and description. */
 export function WorkflowCard({ icon, title, description, onSelect }: WorkflowCardProps) {
   return (
     <li className="workflow-card">

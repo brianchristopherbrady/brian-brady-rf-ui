@@ -8,6 +8,6 @@ export default defineConfig({
   build: {
     outDir: 'build',
   },
-  // inlines JS/CSS as a classic script into index.html so it runs from file:// (module scripts are blocked there)
+  // Inlines JS and CSS so file:// loading does not require cross-origin asset requests.
   plugins: [react(), viteSingleFile()],
 })

@@ -1,9 +1,9 @@
 import { useId, useState } from 'react';
-import { IconRail } from './IconRail';
-import { SidebarPanel } from './SidebarPanel';
+import { IconRail } from './IconRail/IconRail';
+import { SidebarPanel } from './SidebarPanel/SidebarPanel';
 import './Sidebar.scss';
 
-/** props for the responsive event sidebar */
+/** Props for the responsive event sidebar. */
 interface SidebarProps {
   eventName: string;
   location: string;
@@ -11,7 +11,7 @@ interface SidebarProps {
   userInitials: string;
 }
 
-/** displays the icon rail and collapsible event navigation panel */
+/** Displays the icon rail and collapsible event navigation panel. */
 export function Sidebar({ eventName, location, date, userInitials }: SidebarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const panelId = useId();

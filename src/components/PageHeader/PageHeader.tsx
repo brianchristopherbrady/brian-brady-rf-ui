@@ -1,7 +1,7 @@
 import eventLogo from '../../assets/images/event-logo.png';
 import './PageHeader.scss';
 
-/** propps for the event page header. */
+/** Props for the event page header. */
 interface PageHeaderProps {
   title: string;
   date: string;
@@ -9,7 +9,7 @@ interface PageHeaderProps {
   onEditEvent?: () => void;
 }
 
-/** displays the event identity, metadata, and edit action. */
+/** Displays the event identity, metadata, and edit action. */
 export function PageHeader({ title, date, location, onEditEvent }: PageHeaderProps) {
   return (
     <header className="page-header">
