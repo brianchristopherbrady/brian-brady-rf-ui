@@ -1,7 +1,7 @@
 @use '../../../styles/tokens' as *;
 @use '../../../styles/mixins' as *;
 
-.accordion-section {
+.setup-guide-section {
   @include flex-column;
   gap: $space-m;
   padding-top: $space-m;

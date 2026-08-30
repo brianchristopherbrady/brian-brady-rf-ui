@@ -4,7 +4,7 @@ import {
   postRegistrationCards,
   registrationWorkflowCards,
 } from '../../data/content';
-import { AccordionSection } from './AccordionSection/AccordionSection';
+import { SetupGuideSection } from './SetupGuideSection/SetupGuideSection';
 import { AddWorkflowCard } from './AddWorkflowCard/AddWorkflowCard';
 import { StepSection } from './StepSection/StepSection';
 import { TaskChip } from './TaskChip/TaskChip';
@@ -26,7 +26,7 @@ export function SetupGuide() {
         See the available list of modules below. We suggest that you start with the attendee module.
       </p>
 
-      <AccordionSection title="Attendee">
+      <SetupGuideSection title="Attendee">
         <StepSection label="Step 1: Base settings.">
           <ul className="task-chip-grid">
             {baseSettingsTasks.map((task, index) => (
@@ -62,7 +62,7 @@ export function SetupGuide() {
             ))}
           </ul>
         </StepSection>
-      </AccordionSection>
+      </SetupGuideSection>
     </section>
   );
 }
